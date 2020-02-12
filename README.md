@@ -2,18 +2,25 @@ This repository contains the code that will be used for Purple Blue Team's Sprin
 
 # Project Information
 
-## finalProduct.html and input.html
+## finalProduct.html and input.html (under the test files folder)
 These are sample HTML files that represent what the HTML output should look like after running our function, and before running our function, respectively
 
+## driver.js
+This file is meant to simulate what FSB's backend might look like. It calls the function in mobileFormatter.js and displays the output to samplePage.html
+
+## samplePage.html
+This file is a sample page that shows the output of our function.
+
+## mobileFormatter.js
+This is the file that stores the function we wrote that converts desktop-friendly HTML to mobile-friendly HTML, if the screen size is that of a mobile device.
+
+# Important Notes and Dependencies
+* The HTML passed to our function must be provided in the form of a string.
+* Our solution relies on JQuery, so that should be properly installed.
+* Our function should be called each time the window is resized. 
 
 
-
-
-
-
-
-
-# Support
+# Development Support
 
 ## How to use GitHub Desktop
 In the top bar of GitHub Desktop, you can see a few menus: "Current Repository," "Current Branch," and a third one that says either "Fetch Origin," "Push Origin," or "Publish Branch." When you first start working on some changes, make sure you switch to the correct branch you were working on using the second tab, or create a new branch. If you are picking up where you left off, make sure you click "Fetch Origin," which will ensure your branch is the same as the one on GitHub. If you made a new branch, you just have to click "Publish Branch" to make sure that GitHub knows about the branch you just made on your computer.
