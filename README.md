@@ -2,8 +2,8 @@ This repository contains the code that will be used for Purple Blue Team's Sprin
 
 # Project Information
 
-## finalProduct.html and input.html (under the test files folder)
-These are sample HTML files that represent what the HTML output should look like after running our function, and before running our function, respectively
+## Test files directory
+These are sample HTML files that represent what the HTML output should look like after running our function, and before running our function, respectively. inputX.html corrresponds to outputX.html
 
 ## driver.js
 This file is meant to simulate what FSB's backend might look like. It calls the function in mobileFormatter.js and displays the output to samplePage.html
