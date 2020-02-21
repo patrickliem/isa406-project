@@ -14,13 +14,10 @@ This file is a sample page that shows the output of our function.
 ## mobileFormatter.js
 This is the file that stores the function we wrote that converts desktop-friendly HTML to mobile-friendly HTML, if the screen size is that of a mobile device.
 
-# Important Notes and Dependencies
+# Important Notes and Assumptions
 * The HTML passed to our function must be provided in the form of a string.
 * Our solution relies on JQuery, so that should be properly installed.
-* Our function should be called each time the window is resized. 
-* The solution is dependent on the right column having a specific style, and the first br tag being placed in a specific spot.
-This could be changed to be dependent on the right column floating, and there being an h1 that matches a department. This might be
-slightly more modular. In any case, having id tags present on both the div and the h3 (or the br below it) would be very helpful.
+* Ideally, the "Profile" h1 will have an id of "profile-heading" and the div that contains the right column will have an id of "right-column"
 
 
 # Development Support
