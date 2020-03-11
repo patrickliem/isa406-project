@@ -10,16 +10,16 @@ function enhanceHTML(htmlString, cutoffWindowSize) {
     let dummy = $("<div></div>");
     $(dummy).append(htmlString);
 
-    // The contact information div is the third div
+    // The contact information div is the fourth div
     let rightCol = $(dummy).find("div")[3];
 
-    // The place to put the contact information div is the first (and only) br
+    // The place to put the contact information div is the second h1
     let heading = $(dummy).find("h1")[1];
 
     $(rightCol).attr("id", "right-column");
     $(heading).attr("id", "profile-heading");
 
-    // Detach the contact information column and adjust the CSS to make it not float
+    // Detach the contact information column
     let contactInfo = $(rightCol).detach();
 
     // Add the contact information div back in, but just above the Profile h1
@@ -34,12 +34,29 @@ function enhanceHTML(htmlString, cutoffWindowSize) {
     return $(dummy).html();
 }
 
-// Generates a custom script tag to insert into the HTML. It contains JQuery that will
+// Generates a custom script tag to insert into the HTML. It contains jQuery that will
 // change the HTML when the window loads or is resized.
 function generateScriptTag(cutoffWindowSize) {
     
-    let onLoadScript = "$(document).ready(function() {if ($(window).width() <= " + cutoffWindowSize + ") {$(\"#right-column\").css(\"float\", \"none\");$(\"#right-column\").css(\"position\", \"static\")}else{$(\"#right-column\").css(\"float\", \"left\");$(\"#right-column\").css(\"position\", \"absolute\");}});";
-    let resizeScript = "$(window).resize(function() {if ($(window).width() <= " + cutoffWindowSize + ") {$(\"#right-column\").css(\"float\", \"none\");$(\"#right-column\").css(\"position\", \"static\")}else{$(\"#right-column\").css(\"float\", \"left\");$(\"#right-column\").css(\"position\", \"absolute\");}});";
+    let onLoadScript = "$(document).ready(function() {" + 
+                            "if ($(window).width() <= " + cutoffWindowSize + ") {" + 
+                                "$(\"#right-column\").css(\"float\", \"none\");" + 
+                                "$(\"#right-column\").css(\"position\", \"static\");" + 
+                            "}else{" + 
+                                "$(\"#right-column\").css(\"float\", \"left\");" + 
+                                "$(\"#right-column\").css(\"position\", \"absolute\");" + 
+                            "}" + 
+                        "});";
+
+    let resizeScript = "$(window).resize(function() {" + 
+                            "if ($(window).width() <= " + cutoffWindowSize + ") {" + 
+                                "$(\"#right-column\").css(\"float\", \"none\");" + 
+                                "$(\"#right-column\").css(\"position\", \"static\");" + 
+                            "}else{" + 
+                                "$(\"#right-column\").css(\"float\", \"left\");" + 
+                                "$(\"#right-column\").css(\"position\", \"absolute\");" + 
+                            "}" + 
+                        "});";
 
     return "<script>" + resizeScript + onLoadScript + "</script>";
 }
