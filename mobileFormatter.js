@@ -29,13 +29,22 @@ function enhanceHTML(htmlString, cutoffWindowSize) {
     // Note: This assumes that the HTML will be placed somewhere in the body
     // tag of the template. If that is not the case, we can fall back to the
     // less ideal option of injecting a custom style tag with a media query.
-    $(dummy).prepend(generateScriptTag(cutoffWindowSize));
+    $(dummy).prepend(generateStyleTag(cutoffWindowSize));
 
     return $(dummy).html();
 }
 
+// Generates a custom style tag with a media query that handles resizing
+function generateStyleTag(cutoffWindowSize) {
+    let styleTag = "<style> @media (max-width: " + cutoffWindowSize + "px) {#right-column { float: none !important; position: static !important;} } </style>";
+
+    return styleTag;
+}
+
+
 // Generates a custom script tag to insert into the HTML. It contains jQuery that will
 // change the HTML when the window loads or is resized.
+// Currently not used
 function generateScriptTag(cutoffWindowSize) {
     
     let onLoadScript = "$(document).ready(function() {" + 
