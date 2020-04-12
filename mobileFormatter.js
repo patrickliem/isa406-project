@@ -40,32 +40,3 @@ function generateStyleTag(cutoffWindowSize) {
 
     return styleTag;
 }
-
-
-// Generates a custom script tag to insert into the HTML. It contains jQuery that will
-// change the HTML when the window loads or is resized.
-// Currently not used
-function generateScriptTag(cutoffWindowSize) {
-    
-    let onLoadScript = "$(document).ready(function() {" + 
-                            "if ($(window).width() <= " + cutoffWindowSize + ") {" + 
-                                "$(\"#right-column\").css(\"float\", \"none\");" + 
-                                "$(\"#right-column\").css(\"position\", \"static\");" + 
-                            "}else{" + 
-                                "$(\"#right-column\").css(\"float\", \"left\");" + 
-                                "$(\"#right-column\").css(\"position\", \"absolute\");" + 
-                            "}" + 
-                        "});";
-
-    let resizeScript = "$(window).resize(function() {" + 
-                            "if ($(window).width() <= " + cutoffWindowSize + ") {" + 
-                                "$(\"#right-column\").css(\"float\", \"none\");" + 
-                                "$(\"#right-column\").css(\"position\", \"static\");" + 
-                            "}else{" + 
-                                "$(\"#right-column\").css(\"float\", \"left\");" + 
-                                "$(\"#right-column\").css(\"position\", \"absolute\");" + 
-                            "}" + 
-                        "});";
-
-    return "<script>" + resizeScript + onLoadScript + "</script>";
-}
