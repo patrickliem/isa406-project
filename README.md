@@ -1,5 +1,9 @@
 This repository contains the code that will be used for Purple Blue Team's Spring 2020 ISA 406 project.
 
+# How to test the code
+Simply run samplePage.html. The test files directory are there for reference, so you can see what a correct solution should look like. In order to change the test case, change line 10 of driver.js. Currently, we have two test cases available.
+
+
 # Project Information
 
 ## Test files directory
@@ -16,7 +20,6 @@ This is the file that stores the function we wrote that converts desktop-friendl
 
 # Important Notes and Assumptions
 * The HTML passed to our function must be provided in the form of a string.
-* Our solution relies on JQuery, so that should be properly installed.
 * Ideally, the "Profile" h1 will have an id of "profile-heading" and the div that contains the right column will have an id of "right-column"
 
 
