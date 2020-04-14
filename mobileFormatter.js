@@ -7,31 +7,34 @@
 function enhanceHTML(htmlString, cutoffWindowSize) {
 
     // Create a dummy DOM element and add our html to it
-    let dummy = $("<div></div>");
-    $(dummy).append(htmlString);
+    let dummy = document.createElement("DIV");
+    dummy.innerHTML = htmlString;
 
     // The contact information div is the fourth div
-    let rightCol = $(dummy).find("div")[3];
+    let rightCol = dummy.querySelectorAll("div")[3];
 
     // The place to put the contact information div is the second h1
-    let heading = $(dummy).find("h1")[1];
+    let heading = dummy.querySelectorAll("h1")[1];
 
-    $(rightCol).attr("id", "right-column");
-    $(heading).attr("id", "profile-heading");
+    rightCol.id = "right-column";
+    heading.id = "profile-heading";
 
     // Detach the contact information column
-    let contactInfo = $(rightCol).detach();
+    let contactInfo = rightCol.parentElement.removeChild(rightCol);
 
     // Add the contact information div back in, but just above the Profile h1
-    $(heading).before(contactInfo);
+    heading.parentNode.insertBefore(contactInfo, heading);
 
     // Add an inline script that will change the HTML dynamically.
     // Note: This assumes that the HTML will be placed somewhere in the body
     // tag of the template. If that is not the case, we can fall back to the
     // less ideal option of injecting a custom style tag with a media query.
-    $(dummy).prepend(generateStyleTag(cutoffWindowSize));
+    let styleDiv = document.createElement("DIV");
+    styleDiv.innerHTML = generateStyleTag(cutoffWindowSize);
 
-    return $(dummy).html();
+    dummy.prepend(styleDiv);
+
+    return dummy.innerHTML;
 }
 
 // Generates a custom style tag with a media query that handles resizing
