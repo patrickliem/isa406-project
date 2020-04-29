@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.container .btn {
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn:hover {
+  background-color: black;
+}
+
+.submit{
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.submit .btn:hover {
+  background-color: black;
+}
+
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+  font-size:28px
+}
+
+.med {
+  font-size:20px
+}
+
+#department{
+ width:175px;   
+}
+#classification{
+ width:175px;   
+}
+#fname{
+ width:175px;   
+}
+#lname{
+ width:175px;   
+}
+#submit{
+ width:150px;   
+}
+
+input, label, select {
+    display:block;
+}
+</style>
+</head>
+<body>
+<!-- Inline block 1 -->
+	<div style="border-style:solid;" class=center>
+		<div style="display: inline-block;margin-left:10px;margin-top:5px;">
+			<label style="text-align: center;" for="department" class = bold>Department</label>
+			<select id="department" class=center>
+			  <option value="all departments">All Departments</option>
+			  <option value="academic advising">Academic Advising</option>
+			  <option value="accountancy">Accountancy</option>
+			  <option value="building services">Building Services</option>
+			  <option value="bls">BLS</option>
+			  <option value="bus">BUS</option>
+			  <option value="career services">Career Services</option>
+			  <option value="center for analytics and data science">Center for Analytics and Data Science</option>
+			  <option value="development">Development</option>
+			  <option value="economics">Economics</option>
+			</select>
+		</div>  
+		<div style="display: inline-block;margin-left:10px;margin-top:5px;">
+			<label style="text-align: center;" for="classification" class = bold>Classification</label>
+			<select id="classification" class=center>
+             <option value="faculty and staff">Faculty and Staff</option>
+             <option value="faculty">Faculty</option>
+	    	 <option value="staff">Staff</option>
+	 	     <option value="emeriti">Emeriti</option>
+			</select>
+		</div>
+		<div style="display: inline-block;margin-left:10px;margin-top:5px;">
+			<label style="text-align: center;" for="fname" class = bold>First Name</label>
+			<input type="text" id="fname" class=center>
+		</div>
+		<div style="display: inline-block;margin-left:10px;margin-top:5px;">
+			<label style="text-align: center;" for="lname" class = bold>Last Name</label>
+			<input type="text" id="lname" class=center>
+		</div>	
+		
+		<br style="clear:both;" />
+		<br/>
+		
+		<div style="display: inline-block;margin-left:10px; margin-bottom:5px;">
+			<input type="Submit" id="submit" class=submit>
+		</div>
+	</div>
+	<br/>
+
+<!-- Inline block 2 -->
+<div class = center style="margin-left:80px">
+	<div class="container" style="display: inline-block;">
+	  <img src="stock-photo.jpg" alt="Snow" style="width:100%">
+	  <button style="width:100%" class="btn">View Profile</button>
+	</div>
+
+	<div style="display: inline-block;margin-left:10px;margin-top:10px;">
+			<p style = "margin-left:10px;margin-top:10px;" class = bold>F.NAME L.NAME</p>
+			<p style = "margin-left:10px;margin-bottom:-4px;" class = med>Position</p>
+			<hr/>
+			<p style = "margin-left:10px;margin-top:-4px;" class = med>Department Name</p>
+			
+			<div style="display: inline-block;">
+				<p style = "margin-top:-4px; text-align: center;"><img src="email.png" height="25px" width="25px"> ExampleEmail@miamioh.edu</p>
+				<p style = "text-align: left"><img src="location.png" height="25px" width="25px"> Office Location </p>
+				<p style = "text-align: left"><img src="phone.png" height="25px" width="25px"> XXX-XXX-XXXX </p>
+			</div>
+	</div>
+</div>	
+<!-- Inline block 2 -->
+<div class = center style="margin-left:80px">
+	<div class="container" style="display: inline-block;">
+	  <img src="stock-photo.jpg" alt="Snow" style="width:100%">
+	  <button style="width:100%" class="btn">View Profile</button>
+	</div>
+
+	<div style="display: inline-block;margin-left:10px;margin-top:10px;">
+			<p style = "margin-left:10px;margin-top:10px;" class = bold>F.NAME L.NAME</p>
+			<p style = "margin-left:10px;margin-bottom:-4px;" class = med>Position</p>
+			<hr/>
+			<p style = "margin-left:10px;margin-top:-4px;" class = med>Department Name</p>
+			
+			<div style="display: inline-block;">
+				<p style = "margin-top:-4px; text-align: center;"><img src="email.png" height="25px" width="25px"> ExampleEmail@miamioh.edu</p>
+				<p style = "text-align: left"><img src="location.png" height="25px" width="25px"> Office Location </p>
+				<p style = "text-align: left"><img src="phone.png" height="25px" width="25px"> XXX-XXX-XXXX </p>
+			</div>
+	</div>
+</div>	
+</body>
+</html>
